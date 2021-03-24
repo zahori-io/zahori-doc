@@ -138,10 +138,12 @@ Verás que se ha creado una nueva ejecución:
 
 Si seleccionas la ejecución haciendo click sobre ella, podrás ver el detalle de los casos que se van a ejecutar, el estado actual... incluso ver la ejecución en tiempo real en el navegador! (botón "Ver" de la columna Vídeo/Streaming)
 
+![alt text](images/home/UltimasEjecuciones_videoStreaming.png "Proceso en video streaming")
+
+
 **5.5 Resultados y evidencias**
 
-Revisa los resultados y evidencias de la ejecución
-Recarga la página "Últimas ejecuciones": visitándola de nuevo o con el botón recargar (a futuro la recarga será automática en tiempo real ;). 
+Una vez que el proceso ha terminado puedes revisar los resultados y evidencias de la ejecución recargando la página "Últimas ejecuciones". Puedes recargarla pulsando sobre el icono recargar (a futuro la recarga será automática en tiempo real ;). 
 
 ![alt text](images/home/UltimasEjecuciones_reload.png "Recargar Últimas Ejecuciones")
 
