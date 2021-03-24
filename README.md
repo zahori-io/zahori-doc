@@ -1,10 +1,8 @@
 # ![alt text](images/home/Logo_zahori.jpg "Zahorí architecture")
 
-[Qué es Zahorí](#qué-es-zahorí)
-
-[Cómo funciona](#cómo-funciona)
-
-[Quiero probar Zahorí, ¿por donde empiezo?](#quiero-probar-zahorí-por-donde-empiezo)
+- [Qué es Zahorí](#qué-es-zahorí)
+- [Cómo funciona](#cómo-funciona)
+- [Quiero probar Zahorí, ¿por donde empiezo?](#quiero-probar-zahorí-por-donde-empiezo)
 
 ## Qué es Zahorí
 
