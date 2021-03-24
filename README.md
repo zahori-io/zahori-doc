@@ -76,7 +76,7 @@ Para acceder utiliza las siguientes credenciales por defecto:
 - Usuario: zahori
 - Contraseña: zahori
 
-Una vez logado verás el dashboard principal:
+Una vez logado verás el dashboard principal de Zahorí:
 
 ![alt text](images/home/Dashboard.png "Dashboard")
 
@@ -87,7 +87,7 @@ Desde una consola, dentro de la carpeta raíz del proyecto "zahori-process" ejec
 
 Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
 
-![alt text](images/home/Spring-boot-run.png "Process started")
+![alt text](images/home/Process_started.png "Process started")
 
 Abre un navegador web y visita la url: [http://localhost:9091](http://localhost:9091)
 
@@ -95,7 +95,7 @@ Verás la siguiente página:
 
 ![alt text](images/home/Process_up.png "Pocess is up")
 
-Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir peticiones de nuevas ejecuciones desde el frontal web.
+Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir peticiones nuevas ejecuciones desde el frontal web.
 
 ### 5. **Ejecutar el proceso**
 Al ejecutar el proceso de ejemplo, cargará la página web wikipedia.org y realizará una búsqueda de las palabras y en el idioma que hayamos definido en los diferentes casos de prueba. Existen 4 casos de prueba predefinidos, más adelante veremos cómo podemos modificarlos, eliminarlos o crear nuevos.
