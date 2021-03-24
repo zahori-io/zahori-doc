@@ -1,0 +1,355 @@
+:imagesdir: images
+
+= Zahorí Process Doc Linux
+:revdate: {docdate}
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectanchors:
+:Author: Zahori Panel Team
+:revnumber: latest
+:icons: font
+:source-highlighter: coderay
+:docinfo: shared
+
+This reference for version: _{revnumber}_
+
+[cols=2*,options="header"]
+.Requisitos del Entorno de Desarrollo Ubuntu 20.04 LTS
+|===
+|Nombre Aplicación
+|Version
+
+|git
+|2.25.1
+
+|jdk
+|11.0.10.j9-adpt
+
+|maven
+|3.6.3
+
+|Docker
+|20.10.5
+
+|docker-compose
+|1.25.0
+|===
+
+<<<
+
+La documentación se ha validado con Ubuntu 20.04.2 LTS 64 bits.
+
+= Instalación de la herramienta de control de versiones (GIT):
+<<<
+
+En esta distribución suele venir git instalado. Abrimos un terminal y comprobamos si está instalado:
+
+
+----
+$ git --version
+  git version 2.25.1
+----
+
+
+<<<
+
+En el caso de que no devuelva versión:
+
+----
+$ sudo apt update && apt install git
+----
+
+
+<<<
+
+Ya tenemos git instalado, procedemos a identificamos con nuestros datos de usuario y correo electrónico escribiendo en el terminal:
+
+
+----
+$ git config --global user.name "Mi Usuario"
+----
+
+----
+$ git config --global user.email "micorreoelectronico"
+----
+
+
+
+= Instalación de JDK y Maven:
+
+<<<
+
+Abrimos un terminal e introducimos:
+
+
+----
+$ curl -s "https://get.sdkman.io" | bash
+----
+
+
+<<<
+
+Instalamos el jdk:
+
+----
+$ sdk install java 11.0.10.hs-adpt
+----
+
+
+<<<
+
+Instalamos Maven:
+
+----
+$ sdk install maven
+----
+
+
+
+= Instalación de Docker:
+
+<<<
+
+Desinstalamos versiones anteriores. Abrimos un terminal e introducimos:
+
+----
+$ sudo apt-get remove docker docker-engine docker.io containerd runc
+----
+
+
+<<<
+
+Eliminamos imágenes, volúmenes, contenedores, configuración anteriores. Abrimos un terminal e introducimos:
+
+----
+$ sudo rm -rf /var/lib/docker
+----
+
+----
+$ sudo rm -rf /var/lib/containerd
+----
+
+
+<<<
+
+Instalamos Docker a través de su repositorio oficial. Instalamos la fuente del apt oficial. Abrimos un terminal e introducimos:
+
+----
+$ sudo apt-get update
+----
+
+----
+$ sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+----
+
+----
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+----
+
+----
+$ echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+----
+
+<<<
+
+Instalamos Docker Engine. Abrimos un terminal e introducimos:
+
+----
+$ sudo apt-get update
+----
+
+----
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+----
+
+<<<
+
+Para utilizar Docker con un usuario no root. Abrimos un terminal e introducimos:
+
+----
+$ sudo groupadd docker
+----
+
+
+----
+$ sudo usermod -aG docker $USER
+----
+
+----
+$ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+----
+
+----
+$ sudo chmod grwx "$HOME/.docker" -R
+----
+
+----
+$ newgrp docker
+----
+
+= Instalación de Docker Compose:
+
+<<<
+
+Instalamos Docker Compose con pip. Abrimos un terminal e introducimos:
+
+----
+$ sudo apt install -y python3 python3-pip
+----
+
+----
+$ sudo pip3 install docker-compose
+----
+
+----
+$ docker-compose -v
+  docker-compose version 1.25.0, build unknown
+----
+
+
+
+= Instalación IDE Desarrollo (IntelliJ IDEA Community Edition):
+
+<<<
+
+Instalamos un ejemplo de IDE de Desarrollo, IntelliJ IDEA Community Edition. Abrimos un terminal e introducimos:
+
+
+----
+$ curl -L https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash && sh /opt/jetbrains-toolbox/jetbrains-toolbox.sh
+----
+
+----
+$ jetbrains-toolbox
+----
+
+
+<<<
+
+Aceptamos los términos:
+
+image::IDEA/001_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 1"]
+
+<<<
+
+Vamos a la pestaña Tools y Pulsamos en Install IntelliJ IDEA Community Edition:
+
+image::IDEA/002_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 2"]
+
+
+<<<
+
+Una vez instalado Pulsar sobre IntelliJ IDEA Community Edition:
+
+image::IDEA/003_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 3"]
+
+<<<
+
+En la opción de Proyectos seleccionar Obtener de Control de versiones (VCS):
+
+image::IDEA/004_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 4"]
+
+<<<
+
+Indicamos el directorio de destino y la Url del proyecto a clonar:
+
+
+----
+https://github.com/zahori-io/zahori-process.git
+----
+
+image::IDEA/005_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 5"]
+
+<<<
+
+Vamos a la configuración del Proyecto. Pulsamos Menú File / Project Structure:
+
+image::IDEA/006_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 6"]
+
+<<<
+
+Añadimos el JDK previamente instalado. Project Settings / Project / Project SDK / Add JDK:
+
+image::IDEA/007_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 7"]
+
+<<<
+
+Indicamos el path del SDK previamente instalado:
+
+
+----
+/home/tuNombreDeUsuario/.sdkman/candidates/java/11.0.10.j9-adpt
+----
+
+image::IDEA/008_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 8"]
+
+<<<
+
+Vamos a la configuración General del Proyecto a configurar Maven. Menú File / Settings ...:
+
+image::IDEA/009_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 9"]
+
+<<<
+
+En el cuadro de búsqueda escribimos maven. Build, Execution, Deployment / Build Tools / Maven / Maven home path . Pulsamos en el botón indicado en la imagen:
+
+image::IDEA/010_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 10"]
+
+<<<
+
+Añadimos el path de Maven instalado previamente:
+
+
+----
+/home/tuNombreDeUsuario/.sdkman/candidates/maven/3.6.3
+----
+
+image::IDEA/011_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 11"]
+
+<<<
+
+Para arrancar el servidor de Zahorí y el cluster de navegadores, ejecutamos desde la carpeta zahori-process/server el script start_server.sh:
+
+----
+cd server
+./start_server.sh
+----
+
+<<<
+
+La primera vez que se ejecuta se tiene que descargar todas las imágenes de contenedores, una vez arrancado acceder a la url:
+
+----
+http://localhost:9090/    (usuario:zahori password:zahori)
+----
+
+image::ZAHORI/012_URL_FRONTAL_ZAHORI.png[title="Acceso a Zahorí"]
+
+<<<
+
+Para levantar el proceso en local, ejecuta desde la carpeta raíz del proyecto:
+
+----
+mvn spring-boot:run
+----
+
+<<<
+
+Para realizar una ejecución del proceso ve al frontal de zahorí en la url indicada anteriormente, selecciona el proceso de ejemplo y realiza una nueva ejecución desde la página "Disparador"
+
+<<<
+
+Para parar el servidor de Zahorí pulsamos "Control  c" desde la consola donde se arrancó el servidor, o bien ejecutamos desde la carpeta zahori-process/server el script stop_server.sh:
+
+----
+cd server
+./stop_server.sh
+----
