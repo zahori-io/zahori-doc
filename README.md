@@ -1,7 +1,9 @@
 # ![alt text](images/home/Logo_zahori.jpg "Zahorí architecture")
 
 [Qué es Zahorí](#qué-es-zahorí)
+
 [Cómo funciona](#cómo-funciona)
+
 [Quiero probar Zahorí, ¿por donde empiezo?](#quiero-probar-zahorí-por-donde-empiezo)
 
 ## Qué es Zahorí
@@ -41,7 +43,7 @@ El servidor se compone de:
 
     $ git clone https://github.com/zahori-io/zahori-process.git
 
-### 3. **Iniciar el servidor** de Zahorí.
+### 3. **Iniciar el servidor** de Zahorí
 Dentro la carpeta "zahori-process/server" ejecuta el siguiente fichero
     
 Windows:
@@ -73,7 +75,7 @@ Una vez logado verás el dashboard principal:
 
 ![alt text](images/home/Dashboard.png "Dashboard")
 
-### 4. **Iniciar el proceso** de ejemplo.
+### 4. **Iniciar el proceso** de ejemplo
 Desde una consola, dentro de la carpeta raíz del proyecto "zahori-process" ejecuta el siguiente comando:
 
     mvn spring-boot:run
