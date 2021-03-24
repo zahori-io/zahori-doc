@@ -100,7 +100,7 @@ Verás la siguiente página:
 
 ![alt text](images/home/Process_up.png "Pocess is up")
 
-Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir peticiones nuevas ejecuciones desde el frontal web.
+Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir de nuevas ejecuciones desde el frontal web.
 
 ### 5. **Ejecutar el proceso**
 
