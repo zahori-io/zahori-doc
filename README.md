@@ -1,4 +1,4 @@
-# ![alt text](images/Logo_zahori.jpg "Zahorí architecture")
+# ![alt text](images/home/Logo_zahori.jpg "Zahorí architecture")
 
 [Qué es Zahorí](#qué-es-zahorí)
 [Cómo funciona](#cómo-funciona)
@@ -55,20 +55,22 @@ Linux y Mac:
 La primera vez que iniciemos el servidor tardará un tiempo (según la velocidad de la red), ya que tiene que descargarse las imágenes docker de los diferentes componentes.
 
 Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
+
 ![alt text](images/home/Server_started.png "Servidor iniciado (consola)")
 
-Abre un navegador web y visita la url:
-
-    http://localhost:9090
+Abre un navegador web y visita la url: [http://localhost:9090](http://localhost:9090)
     
 Verás la página de login del frontal web de Zahorí:
+
 ![alt text](images/home/Login.png "Servidor iniciado (web)")
 
 Para acceder utiliza las siguientes credenciales por defecto:
-    - Usuario: zahori
-    - Contraseña: zahori
+
+- Usuario: zahori
+- Contraseña: zahori
 
 Una vez logado verás el dashboard principal:
+
 ![alt text](images/home/Dashboard.png "Dashboard")
 
 ### 4. **Iniciar el proceso** de ejemplo.
@@ -77,19 +79,19 @@ Desde una consola, dentro de la carpeta raíz del proyecto "zahori-process" ejec
     mvn spring-boot:run
 
 Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
+
 ![alt text](images/home/Spring-boot-run.png "Process started")
 
-Abre un navegador web y visita la url:
+Abre un navegador web y visita la url: [http://localhost:9091](http://localhost:9091)
 
-    http://localhost:9091 
+Verás la siguiente página:
 
-Deberías ver la siguiente página:
 ![alt text](images/home/Process_up.png "Pocess is up")
 
 Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir peticiones de nuevas ejecuciones desde el frontal web.
 
 ### 5. **Ejecutar el proceso**
-Al ejecutar el proceso de ejemplo, cargará la página web de la wikipedia y realizará una búsqueda de las palabras y en el idioma que hayamos definido en los diferentes casos de prueba. Existen 4 casos de prueba predefinidos, más adelante veremos cómo podemos modificarlos, eliminarlos o crear nuevos.
+Al ejecutar el proceso de ejemplo, cargará la página web wikipedia.org y realizará una búsqueda de las palabras y en el idioma que hayamos definido en los diferentes casos de prueba. Existen 4 casos de prueba predefinidos, más adelante veremos cómo podemos modificarlos, eliminarlos o crear nuevos.
 
 Para ejecutar el proceso:
 
@@ -98,6 +100,7 @@ Para ejecutar el proceso:
 ![alt text](images/home/Select_process.png "Seleccionar proceso")
 
 **5.2 Accede a la página "Disparador"**
+
 ![alt text](images/home/Select_disparador.png "Ir a página disparador")
 
 **5.3 Ejecutar el proceso**
@@ -106,19 +109,23 @@ Para ejecutar el proceso:
 - Selecciona la configuración por defecto "Config example" (más adelante veremos qué son y cómo se definen).
 - Selecciona los navegadores en los que se ejecutará el proceso.
 - Pulsa el botón "Crear" para iniciar la ejecución.
+
 ![alt text](images/home/Disparador_ejecucion.png "Ejecutar proceso")
 
 **5.4 Ver el proceso en ejecución**
 Para ver que el proceso ha comenzado a ejecutarse accede a la página "Últimas Ejecuciones"
+
 ![alt text](images/home/UltimasEjecuciones.png "Ir a página Últimas Ejecuciones")
 
-Verás que se ha creado una nueva ejecución
+Verás que se ha creado una nueva ejecución:
+
 ![alt text](images/home/Process_running.png "Proceso en ejecución")
 
 Si seleccionas la ejecución haciendo click sobre ella, podrás ver el detalle de los casos que se van a ejecutar, el estado actual... incluso ver la ejecución en tiempo real en el navegador! (botón "Ver" de la columna Vídeo/Streaming)
 
 **5.5** Revisa los **resultados y evidencias** de la ejecución
 Recarga la página "Últimas ejecuciones": visitándola de nuevo o con el botón recargar (a futuro la recarga será automática en tiempo real ;). 
+
 ![alt text](images/home/UltimasEjecuciones_reload.png "Recargar Últimas Ejecuciones")
 
 Selecciona la fila de la ejecución para ver los casos ejecutados y sus resultados.
@@ -128,6 +135,7 @@ Para ver el detalle y las evidencias de un caso pulsa el botón "Ver" de la colu
 ![alt text](images/home/UltimasEjecuciones_verEvidencias.png "Ver evidencias")
 
 Se abrirá un panel lateral donde se pueden ver todas las evidencias generadas para ese caso: los pasos ejecutados, las capturas de pantallas, el log de bajo nivel, etc...
+
 ![alt text](images/home/UltimasEjecuciones_evidencias.png "Evidencias")
 
 ### 6. **Parar el servidor**
