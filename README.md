@@ -24,7 +24,7 @@ Estos proyectos hacen uso del **framework de zahorí** para comunicarse con el s
 
 En definitiva, el framework de zahorí es la librería principal del proyecto que nos ayudará a implementar nuestras automatizaciones.
 
-### El servidor:
+### El servidor
 Proporciona funcionalidades adicionales a los procesos automatizados, como por ejemplo: ejecución remota del proceso, almacén de los resultados y evidencias de las ejecuciones, definición de casos y datos, paralelización de ejecuciones en múltiples navegadores, etc.
 
 El servidor se compone de:
@@ -35,12 +35,15 @@ El servidor se compone de:
 - **API Rest**: es el eje central encargado de coordinar las acciones entre el servidor, los procesos automatizados y el resto de los componentes.
 
 ## Quiero probar Zahorí, ¿por donde empiezo?
+
 ### 1. Instala los **requisitos mínimos** según tu sistema operativo
+
 - [Guía de instalación en Windows 10](https://github.com/zahori-io/zahori-process/blob/master/docs/processWindowsES.adoc)
 - [Guía de instalación en Ubuntu 20.04](https://github.com/zahori-io/zahori-process/blob/master/docs/processUbuntuES.adoc)
 - [Guía de instalación en Mac OS X](https://github.com/zahori-io/zahori-doc/wiki/Instalaci%C3%B3n-del-proyecto-de-prueba-en-Mac-Os-X)
 
 ### 2. Descarga el **proceso de ejemplo**
+
 - Usando git:
 
         git clone https://github.com/zahori-io/zahori-process.git
@@ -49,6 +52,7 @@ El servidor se compone de:
         [Descargar proyecto](https://github.com/zahori-io/zahori-process/archive/refs/heads/master.zip)
 
 ### 3. **Iniciar el servidor** de Zahorí
+
 Dentro la carpeta "zahori-process/server" ejecuta el siguiente fichero
     
 Windows:
@@ -76,11 +80,12 @@ Para acceder utiliza las siguientes credenciales por defecto:
 - Usuario: zahori
 - Contraseña: zahori
 
-Una vez logado verás el dashboard principal de Zahorí:
+Una vez dentro verás el dashboard principal de Zahorí:
 
 ![alt text](images/home/Dashboard.png "Dashboard")
 
 ### 4. **Iniciar el proceso** de ejemplo
+
 Desde una consola, dentro de la carpeta raíz del proyecto "zahori-process" ejecuta el siguiente comando:
 
     mvn spring-boot:run
@@ -98,6 +103,7 @@ Verás la siguiente página:
 Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir peticiones nuevas ejecuciones desde el frontal web.
 
 ### 5. **Ejecutar el proceso**
+
 Al ejecutar el proceso de ejemplo, cargará la página web wikipedia.org y realizará una búsqueda de las palabras y en el idioma que hayamos definido en los diferentes casos de prueba. Existen 4 casos de prueba predefinidos, más adelante veremos cómo podemos modificarlos, eliminarlos o crear nuevos.
 
 Para ejecutar el proceso:
@@ -111,6 +117,7 @@ Para ejecutar el proceso:
 ![alt text](images/home/Select_disparador.png "Ir a página disparador")
 
 **5.3 Ejecutar el proceso**
+
 - Selecciona en la parte izquierda los casos que quieres ejecutar (uno o varios).
 - Da un nombre a tu ejecución para después distinguirla entre otras
 - Selecciona la configuración por defecto "Config example" (más adelante veremos qué son y cómo se definen).
@@ -120,6 +127,7 @@ Para ejecutar el proceso:
 ![alt text](images/home/Disparador_ejecucion.png "Ejecutar proceso")
 
 **5.4 Ver el proceso en ejecución**
+
 Para ver que el proceso ha comenzado a ejecutarse accede a la página "Últimas Ejecuciones"
 
 ![alt text](images/home/UltimasEjecuciones.png "Ir a página Últimas Ejecuciones")
@@ -130,7 +138,9 @@ Verás que se ha creado una nueva ejecución:
 
 Si seleccionas la ejecución haciendo click sobre ella, podrás ver el detalle de los casos que se van a ejecutar, el estado actual... incluso ver la ejecución en tiempo real en el navegador! (botón "Ver" de la columna Vídeo/Streaming)
 
-**5.5** Revisa los **resultados y evidencias** de la ejecución
+**5.5 Resultados y evidencias**
+
+Revisa los resultados y evidencias de la ejecución
 Recarga la página "Últimas ejecuciones": visitándola de nuevo o con el botón recargar (a futuro la recarga será automática en tiempo real ;). 
 
 ![alt text](images/home/UltimasEjecuciones_reload.png "Recargar Últimas Ejecuciones")
@@ -146,6 +156,7 @@ Se abrirá un panel lateral donde se pueden ver todas las evidencias generadas p
 ![alt text](images/home/UltimasEjecuciones_evidencias.png "Evidencias")
 
 ### 6. **Parar el servidor**
+
 Para parar el servidor puedes hacerlo de varias formas:
 - Cerrando la consola desde la que se inició.
 - Pulsando las teclas "Ctrl + c" en la consola desde la que se inició.
@@ -158,6 +169,7 @@ Para parar el servidor puedes hacerlo de varias formas:
     > ./stop_server.sh
 
 ### 7. **Parar el proceso**
+
 Para parar el proceso también puedes hacerlo de varias formas:
 - Cerrando la ventana de la consola del proceso.
 - Pulsando las teclas "Ctrl + c" en la consola del proceso.
