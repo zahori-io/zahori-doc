@@ -38,8 +38,8 @@ El servidor se compone de:
 
 ### 1. Instala los **requisitos mínimos** según tu sistema operativo
 
-- [Guía de instalación en Windows 10](https://github.com/zahori-io/zahori-process/blob/master/docs/processWindowsES.adoc)
-- [Guía de instalación en Ubuntu 20.04](https://github.com/zahori-io/zahori-process/blob/master/docs/processUbuntuES.adoc)
+- [Guía de instalación en Windows 10](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/Installation-Windows-ES.adoc)
+- [Guía de instalación en Ubuntu 20.04](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/Installation-Ubuntu-ES.adoc)
 - [Guía de instalación en Mac OS X](https://github.com/zahori-io/zahori-doc/wiki/Instalaci%C3%B3n-del-proyecto-de-prueba-en-Mac-Os-X)
 
 ### 2. Descarga el **proceso de ejemplo**
