@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fe48a898-f085-46d5-bdd4-b2b9a70bdf58",
-		"name": "ZahoriREST",
+		"name": "Zahori API collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
