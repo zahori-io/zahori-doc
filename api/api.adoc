@@ -1,0 +1,616 @@
+:imagesdir: images
+
+= Documentación sobre el API Rest de Zahorí
+:revdate: {docdate}
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectanchors:
+:Author: Zahori Panel Team
+:revnumber: latest
+:icons: font
+:source-highlighter: coderay
+:docinfo: shared
+
+This reference for version: _{revnumber}_
+
+
+= Descarga de la Colección Postman
+
+[NOTE]
+Puedes importar esta colección de postman descargando los siguientes archivos:
+  link:collections/openzahori-dev.postman_environment.json[Variables Entorno].
+  link:collections/ZahoriREST.postman_collection.json[Colección].
+
+== Variables de Entorno
+[cols=2*,options="header"]
+.Variables de entorno de Postman 
+|===
+|Variable
+|Descripción
+
+|server 
+|Url a la que vamos a atacar
+
+|clientName 
+|Nombre del nuevo cliente
+
+|userName 
+|Nombre del nuevo usuario
+
+|userPassword
+|Contraseña del nuevo usuario
+
+|teamName
+|Nombre de equipo
+
+|adminUser
+|Usuario administrador
+
+|adminPass
+|Contraseña del usuario administrador
+
+|processName
+|Nombre asignado a un nuevo proceso
+
+|configName
+|Nombre asignado a una nueva configuración
+
+|caseName
+|Nombre asignado a un nuevo caso de pruebas
+
+|clientId
+|Identificador del cliente
+
+|processId
+|Identificador interno de un proceso
+|===
+image::01_POSTMAN.png[title="Variables de entorno"]
+
+== Variables de colección
+[cols=2*,options="header"]
+.Variables de colección de Postman 
+|===
+|Variable
+|Descripción
+
+|Token 
+|Token de sesión
+
+|===
+
+image::02_POSTMAN.png[title="Ubicación de variables de colección"]
+
+image::03_POSTMAN.png[title="Variables de colección"]
+
+== Peticiones
+=== 00_Login
+Crea el token de conexión para la cuenta de administrador.
+
+Json:
+
+----
+{
+    "username": "{{adminUser}}",
+    "password": "{{adminPass}}"
+}
+----
+
+==== Input
+[cols=3*,options="header"]
+.Campos de 00_Login 
+|===
+|Variable
+|Descripción
+|Variable entorno
+
+|Username 
+|usuario administrador
+|adminUser
+
+|Password
+|contraseña del administrador
+|adminPass
+
+|===
+
+==== Output
+
+[cols=3*,options="header"]
+.Respuesta de 00_Login 
+|===
+|Variable
+|Descripción
+|Variable de colección
+
+|Token 
+|Token de conexión
+|Token
+
+|===
+
+image::04_POSTMAN.png[title="petición 00_login"]
+
+=== 01_Add_initial_client
+
+Crea un nuevo cliente en el sistema
+
+Json:
+
+----
+{
+    "name": "{{clientName}}",
+    "numParallel": 4,
+    "active": true
+}
+----
+==== Input
+[cols=3*,options="header"]
+.Petición 01_Add_initial_client 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|Name 
+|Nombre del nuevo cliente
+|clientName
+
+|numParallel
+|Número de ejecuciones en paralelo
+|*NO PARAMETRIZADO*
+ * Por defecto valor = 4
+
+|active
+|Cliente activo o inactivo
+|*NO PARAMETRIZADO*
+ * Por defecto valor = true
+
+|logo
+|Logotipo del cliente que sustituirá al de zahorí
+|Valor opcional, no parametrizado. Sin valor por defecto
+
+|css
+|css propio del cliente
+|Valor opcional, no parametrizado. Sin valor por defecto
+
+|===
+
+image::05_POSTMAN.png[title="petición 01_Add_initial_client"]
+
+==== Output
+
+[cols=3*,options="header"]
+.Respuesta de 01_Add_initial_client 
+|===
+|Variable
+|Descripción
+|Variable de colección
+
+| 
+|El Identificador interno de cliente 
+|clientID
+
+|===
+
+image::06_POSTMAN.png[title="Respuesta 01_Add_initial_client"]
+
+=== 02_User_ Sign-Up
+Da de alta un usuario en el cliente
+
+Json:
+
+----
+{
+    "username": "{{userName}}",
+    "password": "{{userPassword}}",
+    "client":{
+        "clientId": {{clientId}}
+    },
+    "roles":[
+        {
+            "id": 1,
+            "code": "ADMIN",
+            "label": "rol admin"
+        }
+    ]
+}
+----
+
+==== Input
+image::07_POSTMAN.png[title="Petición 02_User_Sign-up"]
+[cols=3*,options="header"]
+.Petición de 02_User_Sign-up 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|userName 
+|Nombre del nuevo usuario 
+|userName
+
+|password
+|Contraseña para el nuevo usuario
+|userPassword
+
+|client
+|array de datos del cliente
+|
+
+|client.clientId
+|Identificador interno de cliente
+|clientId
+
+|roles
+|Array de datos referentes al rol de usuario
+|*NO PARAMETRIZADO*
+
+|roles.id
+|identificador del rol
+|valor por defecto = 1
+
+|roles.code
+|Tipo de rol
+|valor por defecto = "ADMIN"
+
+|roles.label
+|Descripción del rol
+|valor por defecto = "rol admin"
+|===
+
+==== Output
+
+Como resultado de esta operación se crea un nuevo usuario con la contraseña especificada.
+
+image::08_POSTMAN.png[title="Respuesta 02_User_Sign-up"]
+
+=== 03_Login_as_User
+Genera el token de autentificación para operar como un usuario
+
+Json:
+
+----
+{
+    "username": "{{userName}}",
+    "password": "{{userPassword}}"
+}
+----
+
+==== Input
+[cols=3*,options="header"]
+.Campos de 03_Login_as_User 
+|===
+|Variable
+|Descripción
+|Variable entorno
+
+|username 
+|Nombre del usuario
+|userName
+
+|Password
+|contraseña del usuario
+|userPassword
+
+|===
+
+==== Output
+
+[cols=3*,options="header"]
+.Respuesta de 03_Login_as_User 
+|===
+|Variable
+|Descripción
+|Variable de colección
+
+|Token 
+|Token de conexión para cuenta de usuario
+|Token
+
+|===
+
+image::09_POSTMAN.png[title="petición 03_Login_as_User"]
+
+=== 04_Add_Team
+Crea un nuevo equipo en el entorno del cliente
+
+Json:
+
+----
+{
+    "admin": false,
+    "favorite": true,
+    "name": "{{teamName}}",
+    "id": {
+        "clientId": {{clientId}},
+        "teamId": {{$randomInt}}
+    }
+}
+----
+
+==== Input
+image::10_POSTMAN.png[title="petición 04_Add_Team"]
+
+[cols=3*,options="header"]
+.Petición 04_Add_Team 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|id 
+|Array con la identificación del equipo 
+|
+
+|id.clientId
+|Identificador interno de cliente
+|clientId
+
+|id.teamId
+|Id del equipo que vamos a crear
+|Actualmente se genera un número aleatorio. En un futuro será autogenerado y no formará parte de la petición
+
+|name
+|Nombre del equipo
+|teamName
+
+|admin
+|
+|*NO PARAMETRIZADO*
+* Valor por defecto = false
+
+|favorite
+|
+|*NO PARAMETRIZADO*
+* Valor por defecto = true
+
+|processes
+|
+|*NO PARAMETRIZADO*
+* Valor opcional, no parametrizado
+
+|===
+==== Output
+
+image::11_POSTMAN.png[title="respuesta de 04_Add_Team"]
+
+[cols=3*,options="header"]
+.Respuesta de 04_Add_Team
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|processId 
+|Identificador de proceso
+|processId
+
+|===
+
+=== 05_Add_Process
+Crea un proceso dentro del equipo de un cliente
+
+JSon:
+
+----
+{
+    "name": "{{processName}}",
+    "processType": {
+        "procTypeId": 1
+    },
+    "client": {
+        "clientId": {{clientId}}
+    },
+    "clientTeam": {
+        "id": {
+            "clientId": {{clientId}},
+            "teamId": {{teamId}}
+        }
+    }
+}
+----
+
+==== Input
+image::12_POSTMAN.png[title="petición 05_Add_Process"]
+
+[cols=3*,options="header"]
+.Petición 04_Add_Team 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|clientTeam 
+|Datos de entrada referentes al equipo 
+|
+
+|clientTeam.clientId
+|Identificador interno de cliente
+|clientId
+
+|ClientTeam.teamId
+|Id interno del equipo
+|teamId
+
+|name
+|Nombre del proceso
+|ProcessName
+
+|ProcessType
+|Tipo de proceso
+|*NO PARAMETRIZADO*
+* Valor por defecto = 1 (browser)
+
+|Client
+|Array de datos del cliente
+|
+
+|client.clientId
+|Identificador interno de cliente
+|clientId
+
+|===
+==== Output
+
+[cols=3*,options="header"]
+.Respuesta de 01_Add_initial_client 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|processId 
+|Identificador de proceso
+|processId
+
+|===
+
+=== 06_add_configurations
+Crea una configuración para un proceso ya existente
+
+Json:
+
+----
+{
+    "name": "{{configName}}",
+    "process": {
+        "processId": {{processId}}
+    },
+    "clientEnvironment": {
+        "environmentId": 1
+    },
+    "retry": {
+        "retryId": 0
+    },
+    "evidenceTypes": [
+        {
+            "eviTypeId": 2
+        },
+        {
+            "eviTypeId": 3
+        },
+        {
+            "eviTypeId": 4
+        }
+    ],
+    "testRepositories": [
+        {
+            "testRepoId": 1
+        }
+    ]
+}
+----
+
+==== Input
+image::13_POSTMAN.png[title="petición 06_add_configurations"]
+
+[cols=3*,options="header"]
+.Petición de 06_add_configurations 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|name
+|Nombre de la configuración
+|configName
+
+|process 
+|Datos de entrada referentes al proceso para el que estamos creando una configuración 
+|
+
+|process.processId
+|Identificador interno de proceso
+|processId
+
+|ClientEnvironment
+|Entorno del cliente en el que crearemos la configuración
+|
+
+
+|ClientEnvironment.environmentId
+|Identificador interno de entorno
+|*NO PARAMETRIZADO*
+* Valor por defecto = 1 (preproducción)
+
+|Retry
+|Array de configuración de la política de reintentos
+|
+
+|retry.retryId
+|
+|*NO PARAMETRIZADO*
+* Valor por defecto = 0
+
+|evidencieTypes
+|Array con los tipos de evidencias que se generarán en la ejecución
+|
+
+|evidencieTypes.eviTypeId
+|Id del tipo de evidencias
+|*NO PARAMETRIZADO*
+* Valores por defecto = 2, 3, 4 (log, screenshot y doc)
+
+|testRepositories
+|Array con los repositorios a los que se subirán los resultados de la ejecución
+|
+
+|testRepositories.testRepoId
+|Identificador interno del repositorio
+|*NO PARAMETRIZADO*
+* Valores por defecto = 1 (Xray server)
+
+|===
+
+==== Output
+Se crea una nueva configuración asociada a un proceso. La respuesta de la petición no incluye ningún dato que pueda ser utilizado posteriormente para otras peticiones
+
+=== 07_add_cases
+Añadir un caso de uso a un proceso
+
+
+Json:
+
+----
+{
+    "name": "{{caseName}}",
+    "data": "test",
+    "process": {
+        "processId": {{processId}}
+    }
+}
+----
+
+==== Input
+image::14_POSTMAN.png[title="petición 07_add_cases"]
+
+[cols=3*,options="header"]
+.Petición de 07_add_cases 
+|===
+|Variable
+|Descripción
+|Variable de entorno
+
+|name
+|Nombre del caso de prueba
+|caseName
+
+|process 
+|Datos de entrada referentes al proceso para el que estamos creando un caso de pruebas 
+|
+
+|data
+|String en el que almacenamos los steps del caso
+|*NO PARAMETRIZADO*
+
+|===
+
+==== Output
+Un nuevo caso de prueba asociado al proceso especificado en la petición
+
+== Flujos
+
+Podemos crear toda la estructura (cliente, usuario, equipo, proceso, configuración y caso) ejecutando todas las pruebas en orden desde el test runner. En este caso, no es necesario incluir valores para las variables *id en las variables de entorno, ya que estas serán calculadas durante la ejecución.
+Si queremos lanzar las ejecuciones independientemente deberemos tener en cuenta las dependencias entre distintas operaciones.
+

@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "fe48a898-f085-46d5-bdd4-b2b9a70bdf58",
+		"name": "ZahoriREST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tests",
+			"item": [
+				{
+					"name": "00_Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Logged as user \" + pm.environment.get(\"adminUser\"), function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token.split(' ').pop());\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{adminUser}}\",\n    \"password\": \"{{adminPass}}\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01_Add_initial_client",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"\r",
+									"pm.test(\"Client \\\"\" + pm.environment.get(\"clientName\") + \"\\\" with id = \" + pm.environment.get(\"clientId\") + \" is created\", function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"  pm.environment.set(\"clientId\", pm.response.json().links[0].href.split(\"/clients/\").pop());\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n            \"name\": \"{{clientName}}\",\r\n            \"numParallel\": 4,\r\n            \"active\": true\r\n     }"
+						},
+						"url": {
+							"raw": "{{server}}/api/clients",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_User Sign-Up",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"created user \\\"\" + pm.environment.get(\"userName\") + \"\\\" with password \" + pm.environment.get(\"userPassword\"), function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"password\": \"{{userPassword}}\",\n    \"client\":{\n        \"clientId\": {{clientId}}\n    },\n    \"roles\":[\n        {\n            \"id\": 1,\n            \"code\": \"ADMIN\",\n            \"label\": \"rol admin\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{server}}/users/sign-up",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_Login as User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Logged as user \" + pm.environment.get(\"userName\"), function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									" pm.collectionVariables.set(\"token\", pm.response.json().token.split(' ').pop());\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{userName}}\",\n    \"password\": \"{{userPassword}}\"\n}"
+						},
+						"url": {
+							"raw": "{{server}}/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_Add_Team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Created team \" + pm.environment.get(\"teamName\"), function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"admin\": false,\r\n    \"favorite\": true,\r\n    \"name\": \"{{teamName}}\",\r\n    \"id\": {\r\n        \"clientId\": {{clientId}},\r\n        \"teamId\": {{$randomInt}}\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/teams",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_Add_Process",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Created process \" + pm.environment.get(\"processName\"), function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"  pm.environment.set(\"processId\", pm.response.json().links[0].href.split(\"/processes/\").pop());\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZW5lcmljbyIsIkNMQUlNX1RPS0VOIjoiQURNSU4iLCJjbGllbnRJZCI6MiwiaWF0IjoxNjEzNTU4MzQzLCJleHAiOjE2MTM2NDQ3NDN9.wxUyepYq7iMuX294A7HOb3VYL44suzxHZ5gRufMQ9JH9pX3wGF-KN436C1YoPcyQVupQ3xtD_Pd6z_QJK0-0pQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{processName}}\",\r\n    \"processType\": {\r\n        \"procTypeId\": 1\r\n    },\r\n    \"client\": {\r\n        \"clientId\": {{clientId}}\r\n    },\r\n    \"clientTeam\": {\r\n        \"id\": {\r\n            \"clientId\": {{clientId}},\r\n            \"teamId\": {{teamId}}\r\n        }\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/processes",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"processes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_Add_configurations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Created configuration \" + pm.environment.get(\"configName\"), function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{configName}}\",\r\n     \"process\": {\r\n        \"processId\": {{processId}}\r\n    },\r\n    \"clientEnvironment\": {\r\n        \"environmentId\": 1\r\n    },\r\n    \"retry\": {\r\n        \"retryId\": 0\r\n    },\r\n    \"evidenceTypes\": [\r\n        {\r\n            \"eviTypeId\": 2\r\n        },\r\n        {\r\n            \"eviTypeId\": 3\r\n        },\r\n        {\r\n            \"eviTypeId\": 4\r\n        }\r\n    ],\r\n    \"testRepositories\": [\r\n        {\r\n            \"testRepoId\": 1\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{server}}/api/configurations",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_add_cases",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Created case \" + pm.environment.get(\"caseName\"), function () {\r",
+									"  pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{caseName}}\",\r\n    \"data\": \"test\",\r\n    \"process\": {\r\n        \"processId\": {{processId}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/api/cases",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"cases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
