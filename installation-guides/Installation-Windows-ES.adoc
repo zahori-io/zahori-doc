@@ -14,7 +14,7 @@
 
 
 [cols=2*,options="header"]
-.Requisitos del Entorno de Desarrollo Windows 10 64 bits
+.Requisitos del Entorno de Desarrollo Windows 10 (64 bits)
 |===
 |Nombre Aplicación
 |Version
@@ -29,10 +29,10 @@
 |3.6.3
 
 |Docker
-|20.10.5, build 55c4c88
+|20.10.5
 
 |docker-compose
-|1.28.5, build c4eb3a1f
+|1.28.5
 |===
 
 
