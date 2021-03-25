@@ -19,8 +19,8 @@ This reference for version: _{revnumber}_
 
 [NOTE]
 Puedes importar esta colección de postman descargando los siguientes archivos:
-  link:collections/openzahori-dev.postman_environment.json[Variables Entorno].
-  link:collections/ZahoriREST.postman_collection.json[Colección].
+  link:collections/zahori-api.postman_environment.json[Variables Entorno].
+  link:collections/zahori-api.postman_collection.json[Colección].
 
 == Variables de Entorno
 [cols=2*,options="header"]
