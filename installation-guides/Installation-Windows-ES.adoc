@@ -62,7 +62,7 @@ image::GIT/01_WIZARD01.PNG[title="Instalación Git Paso 2"]
 
 <<<
 
-Marcamos el check Lauch Git Bash defecto y pulsamos Finish:
+Marcamos el check "Launch Git Bash" y pulsamos Finish:
 
 image::GIT/01_WIZARD03.PNG[title="Instalación Git Paso 3"]
 
