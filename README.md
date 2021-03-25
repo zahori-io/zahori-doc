@@ -32,8 +32,7 @@ El servidor se compone de:
 - Una **base de datos** PostgreSQL donde se guarda toda la información.
 - **Aerokube/Selenoid**: herramienta para ejecutar los procesos en múltiples navegadores en paralelo.
 - **Eureka**: servidor donde se registran los procesos y el servidor al iniciarse para que se puedan comunicar entre ellos independientemente del número de instancias de cada uno, sus IPs y puertos.
-- **API Rest**: es el eje central encargado de coordinar las acciones entre el servidor, los procesos automatizados y el resto de los componentes.
-
+- [API Rest](https://github.com/zahori-io/zahori-doc/blob/main/api/api.adoc): es el eje central encargado de coordinar las acciones entre el servidor, los procesos automatizados y el resto de los componentes.
 ## Quiero probar Zahorí, ¿por donde empiezo?
 
 ### 1. Instala los **requisitos mínimos** según tu sistema operativo
