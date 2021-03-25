@@ -1,0 +1,115 @@
+:imagesdir: images
+
+= Instalación de IntelliJ IDEA Community Edition en Ubuntu
+:revdate: {docdate}
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectanchors:
+:Author: Zahori Panel Team
+:revnumber: latest
+:icons: font
+:source-highlighter: coderay
+:docinfo: shared
+
+
+= Instalación
+
+<<<
+
+Instalamos un ejemplo de IDE de Desarrollo, IntelliJ IDEA Community Edition. Abrimos un terminal e introducimos:
+
+
+----
+$ curl -L https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash && sh /opt/jetbrains-toolbox/jetbrains-toolbox.sh
+----
+
+----
+$ jetbrains-toolbox
+----
+
+
+<<<
+
+Aceptamos los términos:
+
+image::IDEA/001_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 1"]
+
+<<<
+
+Vamos a la pestaña Tools y Pulsamos en Install IntelliJ IDEA Community Edition:
+
+image::IDEA/002_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 2"]
+
+
+<<<
+
+Una vez instalado Pulsar sobre IntelliJ IDEA Community Edition:
+
+image::IDEA/003_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 3"]
+
+<<<
+
+En la opción de Proyectos seleccionar Obtener de Control de versiones (VCS):
+
+image::IDEA/004_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 4"]
+
+<<<
+
+Indicamos el directorio de destino y la Url del proyecto a clonar:
+
+
+----
+https://github.com/zahori-io/zahori-process.git
+----
+
+image::IDEA/005_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 5"]
+
+<<<
+
+Vamos a la configuración del Proyecto. Pulsamos Menú File / Project Structure:
+
+image::IDEA/006_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 6"]
+
+<<<
+
+Añadimos el JDK previamente instalado. Project Settings / Project / Project SDK / Add JDK:
+
+image::IDEA/007_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 7"]
+
+<<<
+
+Indicamos el path del SDK previamente instalado:
+
+
+----
+/home/tuNombreDeUsuario/.sdkman/candidates/java/11.0.10.j9-adpt
+----
+
+image::IDEA/008_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 8"]
+
+<<<
+
+Vamos a la configuración General del Proyecto a configurar Maven. Menú File / Settings ...:
+
+image::IDEA/009_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 9"]
+
+<<<
+
+En el cuadro de búsqueda escribimos maven. Build, Execution, Deployment / Build Tools / Maven / Maven home path . Pulsamos en el botón indicado en la imagen:
+
+image::IDEA/010_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 10"]
+
+<<<
+
+Añadimos el path de Maven instalado previamente:
+
+
+----
+/home/tuNombreDeUsuario/.sdkman/candidates/maven/3.6.3
+----
+
+image::IDEA/011_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 11"]
+
+<<<
+
