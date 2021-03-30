@@ -182,4 +182,4 @@ Para empezar a desarrollar tus propias automatizaciones con Zahorí necesitarás
 A continuación te dejamos algunas guías de instalación de los IDEs más conocidos y cómo importar el proceso de ejemplo para empezar a crear tu propia automatización.
 - [Instalar y configurar IntelliJ Idea en Windows 10](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/IDEs/Installation-IntelliJ-Idea-Windows-ES.adoc)
 - [Instalar y configurar IntelliJ Idea en Ubuntu](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/IDEs/Installation-IntelliJ-Idea-Ubuntu-ES.adoc)
-
+- Próximamente... Eclipse
