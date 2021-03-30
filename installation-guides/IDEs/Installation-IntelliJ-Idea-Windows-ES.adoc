@@ -72,6 +72,7 @@ image::IDEA/04_IDE_JETBRAINS07.PNG[title="Instalación IntelliJ IDEA Paso 8"]
 
 <<<
 
+= Importar el proceso de ejemplo de Zahorí
 En la opción de Proyectos seleccionar Obtener de Control de versiones (VCS):
 
 image::IDEA/04_IDE_JETBRAINS08.PNG[title="Instalación IntelliJ IDEA Paso 9"]
@@ -90,6 +91,7 @@ image::IDEA/04_IDE_JETBRAINS09.PNG[title="Instalación IntelliJ IDEA Paso 10"]
 
 <<<
 
+= Configurar el JDK
 Vamos a la configuración del Proyecto. Pulsamos Menú File / Project Structure:
 
 image::IDEA/04_IDE_JETBRAINS010.PNG[title="Instalación IntelliJ IDEA Paso 11"]
@@ -130,6 +132,7 @@ image::IDEA/04_IDE_JETBRAINS014.PNG[title="Instalación IntelliJ IDEA Paso 15"]
 
 <<<
 
+= Configurar Maven
 Añadimos el path de Maven instalado previamente:
 
 
@@ -150,6 +153,7 @@ image::IDEA/04_IDE_JETBRAINS016.PNG[title="Instalación IntelliJ IDEA Paso 17"]
 
 <<<
 
+= Iniciar el servidor de Zahorí
 Para arrancar el servidor de Zahorí, en primer lugar es necesario arrancar Docker como administrador. Para ello abrimos PowerShell como administrador y ejecutamos el siguiente comando:
 
 ----
@@ -159,7 +163,7 @@ Para arrancar el servidor de Zahorí, en primer lugar es necesario arrancar Dock
 
 <<<
 
-A continuación arrancamos el cluster de navegadores, ejecutamos desde la carpeta zahori-process/server el script start_server.bat:
+A continuación arrancamos el servidor, ejecutamos desde la carpeta zahori-process/server el script start_server.bat:
 
 ----
 cd server
@@ -171,7 +175,7 @@ image::IDEA/04_IDE_JETBRAINS017.PNG[title="Instalación IntelliJ IDEA Paso 18"]
 
 <<<
 
-Durante la carga el firewall de windows bloqueará la ejecución del JDK. Permitimos acceso para poder continuar
+Durante el inicio el firewall de windows bloqueará la ejecución del JDK. Permitimos acceso para poder continuar
 
 image::IDEA/04_IDE_JETBRAINS024.PNG[title="Instalación IntelliJ IDEA Paso 19"]
 
@@ -189,6 +193,7 @@ image::ZAHORI/012_URL_FRONTAL_ZAHORI.png[title="Acceso a Zahorí"]
 
 <<<
 
+= Iniciar el proceso de automatización de ejemplo
 Para levantar el proceso en local, ejecuta desde la carpeta raíz del proyecto:
 
 image::IDEA/04_IDE_JETBRAINS023.PNG[title="Levantamos el proceso"]
@@ -201,6 +206,7 @@ mvn spring-boot:run
 
 <<<
 
+= Ejecutar el proceso
 Para realizar una ejecución del proceso ve al frontal de zahorí en la url indicada anteriormente, selecciona el proceso de ejemplo y realiza una nueva ejecución desde la página "Disparador"
 
 image::ZAHORI/013_URL_FRONTAL_ZAHORI.png[title="Configurar disparador"]
@@ -210,6 +216,7 @@ image::ZAHORI/014_URL_FRONTAL_ZAHORI.png[title="Resultado ejecución"]
 
 <<<
 
+= Parar el servidor
 Para parar el servidor de Zahorí pulsamos "Control + c" desde la consola donde se arrancó el servidor, o bien ejecutamos desde la carpeta zahori-process/server el script stop_server.bat:
 
 image::IDEA/04_IDE_JETBRAINS022.PNG[title="Paramos servidor desde InteliJ"]
