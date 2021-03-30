@@ -3,6 +3,7 @@
 - [Qué es Zahorí](#qué-es-zahorí)
 - [Cómo funciona](#cómo-funciona)
 - [Quiero probar Zahorí, ¿por donde empiezo?](#quiero-probar-zahorí-por-donde-empiezo)
+- [Configura el entorno de desarrollo](#configura-el-entorno-de-desarrollo)
 
 ## Qué es Zahorí
 
@@ -175,3 +176,10 @@ Para parar el servidor puedes hacerlo de varias formas:
 Para parar el proceso también puedes hacerlo de varias formas:
 - Cerrando la ventana de la consola del proceso.
 - Pulsando las teclas "Ctrl + c" en la consola del proceso.
+
+## Configura el entorno de desarrollo
+Para empezar a desarrollar tus propias automatizaciones con Zahorí necesitarás un IDE que te permita desarrollar en Java.
+A continuación te dejamos algunas guías de instalación de los IDEs más conocidos y cómo importar el proceso de ejemplo para empezar a crear tu propia automatización.
+- [Instalar y configurar IntelliJ Idea en Windows 10](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/IDEs/Installation-IntelliJ-Idea-Windows-ES.adoc)
+- [Instalar y configurar IntelliJ Idea en Ubuntu](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/IDEs/Installation-IntelliJ-Idea-Ubuntu-ES.adoc)
+
