@@ -167,7 +167,7 @@ A continuación arrancamos el servidor, ejecutamos desde la carpeta zahori-proce
 
 ----
 cd server
-./start_server.bat
+start_server.bat
 ----
 
 image::IDEA/04_IDE_JETBRAINS017.PNG[title="Instalación IntelliJ IDEA Paso 18"]
