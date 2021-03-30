@@ -117,33 +117,14 @@ image::IDEA/011_IDE_JETBRAINS.PNG[title="Instalación IntelliJ IDEA Paso 11"]
 <<<
 
 = Iniciar el servidor de Zahorí
-Para arrancar el servidor de Zahorí, en primer lugar es necesario arrancar Docker como administrador. Para ello abrimos PowerShell como administrador y ejecutamos el siguiente comando:
-
-----
-& 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchDaemon
-----
-
-
-<<<
-
-A continuación arrancamos el servidor, ejecutamos desde la carpeta zahori-process/server el script start_server.bat:
+Para arrancar el servidor, ejecutamos desde la carpeta zahori-process/server el script start_server.sh:
 
 ----
 cd server
-./start_server.bat
+./start_server.sh
 ----
 
 image::IDEA/04_IDE_JETBRAINS017.PNG[title="Instalación IntelliJ IDEA Paso 18"]
-
-
-<<<
-
-Durante el inicio el firewall de windows bloqueará la ejecución del JDK. Permitimos acceso para poder continuar
-
-image::IDEA/04_IDE_JETBRAINS024.PNG[title="Instalación IntelliJ IDEA Paso 19"]
-
-
-<<<
 
 La primera vez que se ejecuta se tiene que descargar todas las imágenes de contenedores, una vez arrancado acceder a la url:
 
@@ -180,11 +161,11 @@ image::ZAHORI/014_URL_FRONTAL_ZAHORI.png[title="Resultado ejecución"]
 <<<
 
 = Parar el servidor
-Para parar el servidor de Zahorí pulsamos "Control + c" desde la consola donde se arrancó el servidor, o bien ejecutamos desde la carpeta zahori-process/server el script stop_server.bat:
+Para parar el servidor de Zahorí pulsamos "Control + c" desde la consola donde se arrancó el servidor, o bien ejecutamos desde la carpeta zahori-process/server el script stop_server.sh:
 
 image::IDEA/04_IDE_JETBRAINS022.PNG[title="Paramos servidor desde InteliJ"]
 
 ----
 cd server
-stop_server.bat
+./stop_server.sh
 ----
