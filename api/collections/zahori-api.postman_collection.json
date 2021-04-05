@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fe48a898-f085-46d5-bdd4-b2b9a70bdf58",
+		"_postman_id": "76aa1ed5-899f-46b6-9dcc-663f30aca6e1",
 		"name": "Zahori API collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -436,6 +436,249 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "process",
+			"item": [
+				{
+					"name": "environments",
+					"item": [
+						{
+							"name": "Get process environments",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/environments",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post process environments",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"active\": true,\r\n        \"name\": \"test\",\r\n        \"order\": 3,\r\n        \"url\": \"https://test.url\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/environments",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete process environments",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"environmentId\": 2\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/environments",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"environments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tags",
+					"item": [
+						{
+							"name": "Get process tags",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/tags",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post process tags",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"tagId\": 10,\r\n        \"order\": 1,\r\n        \"name\": \"Tag modified\",\r\n        \"active\": true\r\n    },\r\n    {\r\n        \"order\": 3,\r\n        \"name\": \"New tag\",\r\n        \"active\": true\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/tags",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete process tags",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ6YWhvcmkiLCJDTEFJTV9UT0tFTiI6IkFETUlOIiwiY2xpZW50SWQiOjEsImlhdCI6MTYxNzYwOTgzNywiZXhwIjoxNjE3Njk2MjM3fQ.57OR3sGLDYV5zw-lJmlRDAhrgQl1j0Tl6OrbIv8tc1DuttL3t5jQxDzfPneol5LqGLF9Ue7ajAkAEHBiHHHQrA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"tagId\": 12\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/api/process/{{processId}}/tags",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"api",
+										"process",
+										"{{processId}}",
+										"tags"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
