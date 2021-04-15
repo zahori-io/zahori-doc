@@ -83,6 +83,7 @@ Abrimos un terminal e introducimos:
 
 
 ----
+$ sudo apt install curl
 $ curl -s "https://get.sdkman.io" | bash
 ----
 
@@ -187,7 +188,7 @@ $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
 ----
 
 ----
-$ sudo chmod grwx "$HOME/.docker" -R
+$ sudo chmod g+rwx "$HOME/.docker" -R
 ----
 
 ----
