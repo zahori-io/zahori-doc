@@ -89,7 +89,7 @@ $ curl -s "https://get.sdkman.io" | bash
 
 <<<
 
-Abrimos un nuevo Terminal Bash y ejecutamos 
+**Abrimos un nuevo Terminal Bash** y ejecutamos 
 ----
 $  source "$HOME/.sdkman/bin/sdkman-init.sh"
 ----
