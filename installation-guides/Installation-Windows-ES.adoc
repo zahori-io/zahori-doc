@@ -100,7 +100,7 @@ image::SdkMan/zip.png[title="Instalación de zip, Paso 1"]
 
 <<<
 
-Abrimos un nuevo Terminal Bash y ejecutamos 
+**Abrimos un nuevo Terminal Bash** y ejecutamos 
 ----
 $  source "$HOME/.sdkman/bin/sdkman-init.sh"
 ----
