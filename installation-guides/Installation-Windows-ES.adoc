@@ -98,6 +98,14 @@ SDKMan necesita zip, que no está incluído por defecto en Git Bash para Windows
 
 image::SdkMan/zip.png[title="Instalación de zip, Paso 1"]
 
+<<<
+
+Abrimos un nuevo Terminal Bash y ejecutamos 
+----
+$  source "$HOME/.sdkman/bin/sdkman-init.sh"
+----
+
+
 
 <<<
 
