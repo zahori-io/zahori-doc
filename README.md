@@ -40,8 +40,7 @@ El servidor se compone de:
 
 - [Guía de instalación en Windows 10](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/Installation-Windows-ES.adoc)
 - [Guía de instalación en Ubuntu 20.04](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/Installation-Ubuntu-ES.adoc)
-- [Guía de instalación en Mac OS X](https://github.com/zahori-io/zahori-doc/wiki/Gu%C3%ADa-de-instalaci%C3%B3n-en-Mac-OS-X-de-los-requisitos-m%C3%ADnimos-de-Zahor%C3%AD)
-
+- [Guía de instalación en Mac OS X](https://github.com/zahori-io/zahori-doc/wiki/Installation-Guide-for-Zahor%C3%AD-minimal-requirements-in-Mac-OS)
 
 ### 2. Descarga el **proceso de ejemplo**
 
