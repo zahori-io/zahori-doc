@@ -53,7 +53,9 @@ El servidor se compone de:
 
 ### 3. **Iniciar el servidor** de Zahorí
 
-Dentro la carpeta "zahori-process/server" ejecuta el siguiente fichero
+Primero, asegúrate de que Docker está iniciado, sino arráncalo.
+Después, abre una consola y sitúate dentro de la carpeta "zahori-process/server".
+A continuación ejecuta el siguiente comando:
     
 Windows:
 
