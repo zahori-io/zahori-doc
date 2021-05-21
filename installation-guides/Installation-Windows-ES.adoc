@@ -187,8 +187,10 @@ Una vez instalado, abre Docker Desktop, accede a settings y comprueba que la var
 
 image::Docker/05_DOCKER_DESKTOP.PNG[title="Wizard Docker"]
 
+
+
 <<<
 
-[Continuar en Punto 2 de la documentación](https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo)
+Continuar en el punto 2 "Descarga el proceso de ejemplo": https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo
 
 <<<
