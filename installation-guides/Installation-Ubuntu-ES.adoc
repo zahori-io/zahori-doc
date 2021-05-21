@@ -221,3 +221,6 @@ $ docker-compose -v
   docker-compose version 1.25.0, build unknown
 ----
 
+<<<
+[Continuar en Punto 2 de la documentación](https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo)
+<<<
