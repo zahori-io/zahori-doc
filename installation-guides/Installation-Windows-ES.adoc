@@ -190,7 +190,7 @@ image::Docker/05_DOCKER_DESKTOP.PNG[title="Wizard Docker"]
 
 
 <<<
-
-Continuar en el punto 2 "Descarga el proceso de ejemplo": https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo
+= Próximos pasos
+Descarga el proceso de ejemplo: https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo
 
 <<<
