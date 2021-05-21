@@ -186,3 +186,9 @@ image::Docker/03_DOCKER_WIZARD00.PNG[title="Wizard Docker"]
 Una vez instalado, abre Docker Desktop, accede a settings y comprueba que la variable "Use the WSL2 based engine" no está seleccionada: 
 
 image::Docker/05_DOCKER_DESKTOP.PNG[title="Wizard Docker"]
+
+<<<
+
+[Continuar en Punto 2 de la documentación](https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo)
+
+<<<
