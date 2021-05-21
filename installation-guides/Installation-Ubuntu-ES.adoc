@@ -222,6 +222,8 @@ $ docker-compose -v
 ----
 
 <<<
+
 = Próximos pasos
 Descarga el proceso de ejemplo: https://github.com/zahori-io/zahori-doc#2-descarga-el-proceso-de-ejemplo
+
 <<<
