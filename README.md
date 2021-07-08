@@ -184,7 +184,7 @@ Se abrirá un panel lateral donde se pueden ver todas las evidencias generadas p
 Para parar el servidor puedes hacerlo de varias formas:
 - Cerrando la consola desde la que se inició.
 - Pulsando las teclas "Ctrl + c" en la consola desde la que se inició.
-- O ejecutando, dentro de la carpeta "zahori-process/server", el siguiente fichero
+- O ejecutando, dentro de la carpeta "zahori-server", el siguiente fichero
     
     Windows:
     > stop_server.bat
