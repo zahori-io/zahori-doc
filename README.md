@@ -42,20 +42,20 @@ El servidor se compone de:
 - [Guía de instalación en Ubuntu 20.04](https://github.com/zahori-io/zahori-doc/blob/main/installation-guides/Installation-Ubuntu-ES.adoc)
 - [Guía de instalación en Mac OS X](https://github.com/zahori-io/zahori-doc/wiki/Installation-Guide-for-Zahor%C3%AD-minimal-requirements-in-Mac-OS)
 
-### 2. Descarga el **proceso de ejemplo**
+### 2. Descarga el **servidor**
 
 - Usando git:
 
-        git clone https://github.com/zahori-io/zahori-process.git
+        git clone https://github.com/zahori-io/zahori-server.git
 
 - O descargando directamente el proyecto desde GitHub:
-        [Descargar proyecto](https://github.com/zahori-io/zahori-process/archive/refs/heads/master.zip)
+        [Descargar servidor](https://github.com/zahori-io/zahori-server/archive/refs/heads/master.zip)
 
-### 3. **Iniciar el servidor** de Zahorí
+### 3. **Inicia el servidor**
 
 Primero, asegúrate de que Docker está iniciado, sino arráncalo.
 
-Después, abre una consola y sitúate dentro de la carpeta "zahori-process/server".
+Después, abre una consola y sitúate dentro de la carpeta raíz del proyecto "zahori-server".
 
 A continuación ejecuta el siguiente comando según tu sistema operativo:
     
@@ -88,11 +88,29 @@ Una vez dentro verás el dashboard principal de Zahorí:
 
 ![alt text](images/home/Dashboard.png "Dashboard")
 
-### 4. **Iniciar el proceso** de ejemplo
 
-Desde una consola, dentro de la carpeta raíz del proyecto "zahori-process" ejecuta el siguiente comando:
+### 4. Descarga el **proceso de ejemplo**
 
-    mvn spring-boot:run
+- Usando git:
+
+        git clone https://github.com/zahori-io/zahori-process.git
+
+- O descargando directamente el proyecto desde GitHub:
+        [Descargar proyecto](https://github.com/zahori-io/zahori-process/archive/refs/heads/master.zip)
+        
+### 5. **Iniciar el proceso** de ejemplo
+
+Abre una consola y sitúate dentro de la carpeta raíz del proyecto "zahori-process".
+
+A continuación ejecuta el siguiente comando según tu sistema operativo:
+    
+Windows:
+
+    start_process.bat
+
+Linux y Mac: 
+
+    ./start_process.sh
 
 Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
 
@@ -102,25 +120,25 @@ Abre un navegador web y visita la url: [http://localhost:9091](http://localhost:
 
 Verás la siguiente página:
 
-![alt text](images/home/Process_up.png "Pocess is up")
+![alt text](images/home/Process_up.png "Process is up")
 
 Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir de nuevas ejecuciones desde el frontal web.
 
-### 5. **Ejecutar el proceso**
+### 6. **Ejecutar el proceso**
 
 Al ejecutar el proceso de ejemplo, cargará la página web wikipedia.org y realizará una búsqueda de las palabras y en el idioma que hayamos definido en los diferentes casos de prueba. Existen 4 casos de prueba predefinidos, más adelante veremos cómo podemos modificarlos, eliminarlos o crear nuevos.
 
 Para ejecutar el proceso:
 
-**5.1**  En el frontal web de Zahorí, **selecciona el proceso de ejemplo "Search Wikipedia"** que se muestra en el dashboard principal:
+**6.1**  En el frontal web de Zahorí, **selecciona el proceso de ejemplo "Search Wikipedia"** que se muestra en el dashboard principal:
 
 ![alt text](images/home/Select_process.png "Seleccionar proceso")
 
-**5.2 Accede a la página "Disparador"**
+**6.2 Accede a la página "Disparador"**
 
 ![alt text](images/home/Select_disparador.png "Ir a página disparador")
 
-**5.3 Ejecutar el proceso**
+**6.3 Ejecutar el proceso**
 
 - Selecciona en la parte izquierda los casos que quieres ejecutar (uno o varios).
 - Da un nombre a tu ejecución para después distinguirla entre otras
@@ -130,7 +148,7 @@ Para ejecutar el proceso:
 
 ![alt text](images/home/Disparador_ejecucion.png "Ejecutar proceso")
 
-**5.4 Ver el proceso en ejecución**
+**6.4 Ver el proceso en ejecución**
 
 Para ver que el proceso ha comenzado a ejecutarse accede a la página "Últimas Ejecuciones"
 
@@ -145,7 +163,7 @@ Si seleccionas la ejecución haciendo click sobre ella, podrás ver el detalle d
 ![alt text](images/home/UltimasEjecuciones_videoStreaming.png "Proceso en video streaming")
 
 
-**5.5 Resultados y evidencias**
+**6.5 Resultados y evidencias**
 
 Una vez que el proceso ha terminado puedes revisar los resultados y evidencias de la ejecución recargando la página "Últimas ejecuciones". Puedes recargarla pulsando sobre el icono recargar (a futuro la recarga será automática en tiempo real ;). 
 
@@ -161,7 +179,7 @@ Se abrirá un panel lateral donde se pueden ver todas las evidencias generadas p
 
 ![alt text](images/home/UltimasEjecuciones_evidencias.png "Evidencias")
 
-### 6. **Parar el servidor**
+### 7. **Parar el servidor**
 
 Para parar el servidor puedes hacerlo de varias formas:
 - Cerrando la consola desde la que se inició.
@@ -174,7 +192,7 @@ Para parar el servidor puedes hacerlo de varias formas:
     Linux y Mac:
     > ./stop_server.sh
 
-### 7. **Parar el proceso**
+### 8. **Parar el proceso**
 
 Para parar el proceso también puedes hacerlo de varias formas:
 - Cerrando la ventana de la consola del proceso.
