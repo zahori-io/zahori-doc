@@ -116,12 +116,6 @@ Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
 
 ![alt text](images/home/Process_started.png "Process started")
 
-Abre un navegador web y visita la url: [http://localhost:9091](http://localhost:9091)
-
-Verás la siguiente página:
-
-![alt text](images/home/Process_up.png "Process is up")
-
 Esto quiere decir que nuestro proceso de ejemplo "Search Wikipedia" está listo para recibir de nuevas ejecuciones desde el frontal web.
 
 ### 6. **Ejecutar el proceso**
