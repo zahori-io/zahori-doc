@@ -183,7 +183,11 @@ image::Docker/03_DOCKER_WIZARD00.PNG[title="Wizard Docker"]
 
 <<<
 
-Una vez instalado, abre Docker Desktop, accede a settings y comprueba que la variable "Use the WSL2 based engine" no está seleccionada: 
+Una vez instalado, abre Docker Desktop y accede a la configuración:
+
+image::Docker/04_DOCKER_DESKTOP.PNG[title="Configuración Docker"]
+
+Comprueba que están seleccionadas las siguientes opciones y que "Docker Compose V2" está desactivado: 
 
 image::Docker/05_DOCKER_DESKTOP.PNG[title="Wizard Docker"]
 
