@@ -21,12 +21,12 @@ Zahorí se compone de dos partes diferenciadas: los **procesos automatizados** y
 ### Los procesos automatizados
 Son proyectos desarrollados con Java donde vamos a implementar los procesos o pruebas repetitivas que queremos automatizar.
 
-Estos proyectos hacen uso del **framework de zahorí** para comunicarse con el servidor, generar evidencias de forma automática (logs, capturas de pantalla, documentos, vídeos y ficheros HAR), proporcinar facilidades para automatizar distintos tipos de procesos, utilidades para leer y escribir distintos tipos de ficheros, conexiones con bases de datos, utilidades de red, etc...
+Estos proyectos hacen uso del **framework de zahorí** para comunicarse con el servidor, generar evidencias de forma automática (logs, capturas de pantalla, documentos, vídeos y ficheros HAR), proporcionar facilidades para automatizar distintos tipos de procesos, utilidades para leer y escribir distintos tipos de ficheros, conexiones con bases de datos, utilidades de red, etc...
 
 En definitiva, el framework de zahorí es la librería principal del proyecto que nos ayudará a implementar nuestras automatizaciones.
 
 ### El servidor
-Proporciona funcionalidades adicionales a los procesos automatizados, como por ejemplo: ejecución remota del proceso, almacén de los resultados y evidencias de las ejecuciones, definición de casos y datos, paralelización de ejecuciones en múltiples navegadores, etc.
+Proporciona funcionalidades adicionales a los procesos automatizados, como por ejemplo: ejecución remota del proceso, almacén de los resultados y evidencias de las ejecuciones, definición de casos y datos del proceso, paralelización de ejecuciones en múltiples navegadores, etc.
 
 El servidor se compone de:
 - Un **frontal web** desarrollado en Angular donde podemos definir nuestros casos y datos de prueba, ejecutarlos, y ver los resultados y evidencias de esas ejecuciones.
