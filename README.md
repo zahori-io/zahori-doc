@@ -73,7 +73,7 @@ Cuando el proceso termine de arrancar, verás en la consola algo similar a esto:
 
 ![alt text](images/home/Server_started.png "Servidor iniciado (consola)")
 
-Abre un navegador web y visita la url: [http://localhost:9090](http://localhost:9090)
+Abre un navegador web y visita la url: [http://localhost:9090/zahori](http://localhost:9090/zahori)
     
 Verás la página de login del frontal web de Zahorí:
 
