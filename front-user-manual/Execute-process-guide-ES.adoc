@@ -1,0 +1,76 @@
+:imagesdir: images
+= Guía de ejecución de procesos en Zahorí
+:revdate: {docdate}
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectanchors:
+:Author: Zahori Panel Team
+:revnumber: latest
+:icons: font
+:source-highlighter: coderay
+:docinfo: shared
+
+= Pasos previos
+
+<<<
+
+- Debemos tener el servidor iniciado: https://github.com/zahori-io/zahori-doc#3-inicia-el-servidor
+- Debemos tener el proceso ejecutándose: https://github.com/zahori-io/zahori-doc#5-iniciar-el-proceso-de-ejemplo
+
+<<<
+
+= Acceder a la web de zahori
+<<<
+
+Desde nuestro navegador, accedemos a la siguiente URL: localhost:9090/zahori
+Una vez allí, veremos la pantalla de inicio de Zahori, la cual, si es la primera vez que entramos, será la pantalla de Log In:
+
+image::001_ZAHORI_LOGIN.PNG[title="Log in de Zahori"]
+
+Introducimos los credenciales por defecto
+
+- Usuario: zahori
+- Contraseña: zahori
+
+Una vez hecho el Log In, veremos el dashboard de Zahori
+
+
+<<<
+
+= El Dashboard de Zahori
+
+<<<
+
+image::002_ZAHORI_DASHBOARD.PNG[title="Dashboard de Zahori"]
+
+Dentro del dashboard, nos llaman la atención varios elementos:
+
+- Apartado de equipos: es donde podemos ver los diferentes equipos que desarrollan un proceso Zahori, y sus respectivos integrantes.
+- Apartado procesos: es donde podemos ver todos los procesos de Zahorí que tenemos asociados a este servidor.
+- Estadísticas: en el centro del dashboard podemos ver unas pequeñas estadísticas de los procesos:
+    * Equipo que ha desarrollado el proceso
+    * Número de tests que tiene el proceso
+    * Número exacto de tests total, número de tests pasados, y porcentaje de tests pasados
+
+<<<
+
+= Ejecutar un proceso en Zahori
+
+<<<
+
+Vamos a dirigirnos, en el apartado de _procesos_, al proceso _Search Wikipedia_, lo primero que veremos será el apartado de últimas ejecuciones, donde podremos ver todas las ejecuciones que lanzamos, y los resultados de estas
+
+image::003_ZAHORI_ULTIMAS_EJECUCIONES.PNG[title="Últimas ejecuciones de un proceso de Zahori"]
+
+Justo debajo de la cabecera de la web, podemos ver las opciones a las que podemos acceder en este proceso
+
+image::004_ZAHORI_PROCESS_OPTIONS.PNG[title="Opciones de un proceso de Zahori"]
+
+1. Últimas ejecuciones: el apartado que se nos muestra por defecto al acceder a un proceso, muestra todas las ejecuciones lanzadas, paginadas de 10 en 10, y el resultado de cada una.
+2. Disparador: desde este apartado podremos ejecutar los tests que deseemos y que estén registrados en el apartado _Casos_.
+3. Configuraciones: el apartado que nos permite modificar distintos parámetros para la ejecución de un test: contra qué entorno se va a lanzar el test (preproductivo, productivo, etc.), el tiempo de espera para que un elemento de la web se muestre antes de fallar el test, las evidencias que queremos generar, etc.
+4. Casos: en este apartado podemos añadir y modificar los tests cases que queramos lanzar.
+5. Administración: apartado en el cual podemos configurar ciertas utilidades que aplicamos en otros apartados tales como los entornos o resoluciones que podemos utilizar en el apartado _Configuraciones_ o las etiquetas que podemos ponerle a los tests desde el apartado _Casos_.
+
+<<<
