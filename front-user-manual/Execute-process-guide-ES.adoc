@@ -16,7 +16,7 @@
 <<<
 
 - Debemos tener el servidor iniciado: https://github.com/zahori-io/zahori-doc#3-inicia-el-servidor
-- Debemos tener el proceso ejecutándose: https://github.com/zahori-io/zahori-doc#5-iniciar-el-proceso-de-ejemplo
+- Debemos tener el proceso de ejemplo ejecutándose: https://github.com/zahori-io/zahori-doc#5-iniciar-el-proceso-de-ejemplo
 
 <<<
 
@@ -55,7 +55,7 @@ Dentro del dashboard, nos llaman la atención varios elementos:
 
 <<<
 
-= Ejecutar un proceso en Zahori
+= Dentro de un proceso de Zahori
 
 <<<
 
@@ -63,7 +63,7 @@ Vamos a dirigirnos, en el apartado de _procesos_, al proceso _Search Wikipedia_,
 
 image::003_ZAHORI_ULTIMAS_EJECUCIONES.PNG[title="Últimas ejecuciones de un proceso de Zahori"]
 
-Justo debajo de la cabecera de la web, podemos ver las opciones a las que podemos acceder en este proceso
+Justo debajo de la cabecera de la web, podemos ver las opciones a las que podemos acceder al hacer seleccionar un proceso:
 
 image::004_ZAHORI_PROCESS_OPTIONS.PNG[title="Opciones de un proceso de Zahori"]
 
@@ -74,3 +74,77 @@ image::004_ZAHORI_PROCESS_OPTIONS.PNG[title="Opciones de un proceso de Zahori"]
 5. Administración: apartado en el cual podemos configurar ciertas utilidades que aplicamos en otros apartados tales como los entornos o resoluciones que podemos utilizar en el apartado _Configuraciones_ o las etiquetas que podemos ponerle a los tests desde el apartado _Casos_.
 
 <<<
+
+= Ejecutar un test en Zahori
+
+<<<
+
+Hacemos click en el apartado _Disparador_, al hacerlo, veremos los test cases que trae por defecto el proceso de ejemplo de Zahori:
+
+image::005_ZAHORI_PANTALLA_DISPARADOR.PNG[title="Pantalla _disparador_"]
+
+Tenemos tres maneras de seleccionar los tests que queremos ejecutar:
+
+1. Seleccionar el o los tests que queremos ejecutar manualmente, haciendo click en el switch que encontramos en la primera columna de los tests
+
+2. Seleccionar todos los test con el switch que está fuera de la tabla, haciendo que se marquen todos automáticamente.
+
+3. Hacer click en las etiquetas de la parte superior derecha de la pantalla de disparador, junto al buscador, se puede asociar un caso con una etiqueta desde la pantalla de _Casos_
+
+image::006_ZAHORI_EJECUTAR_CASOS_CLICK_SWITCH.PNG[title="Primera forma de ejecutar tests: Haciendo click en los switches"]
+
+image::007_ZAHORI_EJECUTAR_CASOS_CLICK_SWITCH_GENERICO.PNG[title="Segunda forma de ejecutar tests: Haciendo click en el switch genérico"]
+
+image::008_ZAHORI_EJECUTAR_CASOS_CLICK_ETIQUETA.PNG[title="Tercera forma de ejecutar tests: Haciendo click en una etiqueta"]
+
+De las tres maneras, como se puede ver en la captura, aparecen los casos a ejecutar que hemos marcado en el panel derecho llamado _Ejecucución_
+
+Una vez seleccionados los tets que queremos ejecutar, introducimos el nombre de la ejecución (por defecto, se pondrá como nombre la fecha y hora actual)
+
+image::009_ZAHORI_EJECUTAR_CASOS_NOMBRE_DEFAULT.PNG[title="Nombre por defecto de la ejecución"]
+
+Seleccioamos la configuración de ejemplo, marcamos en qué navegadores queremos que se ejecute, en qué resoluciones, y hacemos click en el botón "Ejecutar".
+
+image::010_ZAHORI_EJECUTAR_CASOS_CREAR_EJECUCION.PNG[title="Una vez rellena toda la información necesaria, hacemos click en el botón _Ejecutar_"]
+
+Una vez lanzada la ejecución, veremos que debajo del botón _Ejecutar_ aparece un mensaje indicándonos que se ha creado la ejecución de manera satisfactoria.
+
+image::011_ZAHORI_EJECUTAR_CASOS_EJECUCION_LANZADA.PNG[title="Ejecución lanzada de manera correcta"]
+
+<<<
+
+= Interpretar el los resultados de una ejecución
+
+<<<
+
+Una vez lanzada una ejecución, en el apartado _Últimas ejecuciones_ podemos tener varios estados:
+
+1. Test pasado, representado por un check verde
+2. Test fallado, representado por un aspa roja
+3. Test ejecutándose, representado por un semicírculo girando.
+
+Todos estos iconos los podemos ver en la columna _Estado_ de la tabla de resultados.
+
+image::012_INTERPRETAR_RESULTADOS_ESTADO_TEST.PNG[title="Diferentes estados de los tests"]
+
+Para refrescar el estado de los tests, hacemos click en el botón de recargar que tenemos al lado de _Últimas ejecuciones_
+
+image::013_REFRESCAR_ESTADO_TESTS.PNG[title="Refrescar estado de los tests"]
+
+Al hacer click en una ejecución, se nos despliegan todos los test que se han ejecutado, para poder ver con exactitud cuáles han fallado. En el caso de los tests fallados, en la columna _Notas_, veremos una pequeña descripción del fallo.
+
+image::014_MOSTAR_DETALLES_DE_EJECUCION.PNG[title="Al hacer click sobre una ejecución, vemos los detalles de esta"]
+
+Si hacemos click en el botón con un ojo de la columna de evidencias, podemos ver los pasos ejaecutados y tenemos acceso a las distintas evidencias de la prueba, en este caso las capturas de pantalla y el log.
+
+image::015_MOSTAR_EVIDENCIAS_DE_UN_TEST.PNG[title="Evidencias de los tests"]
+
+*Podemos añadir o quitar evidencias desde el apartado _Configuraciones_ del que hablaremos más tarde*
+
+<<<
+
+= Administración: Añadir entornos, resoluciones y etiquetas
+
+= Crear configuraciones
+
+= Crear casos de prueba
