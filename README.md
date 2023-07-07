@@ -16,7 +16,7 @@ Zahorí se puede ejecutar tanto en sistemas Windows, Linux o Mac.
 ## Cómo funciona
 Zahorí se compone de dos partes diferenciadas: los **procesos automatizados** y el **servidor**.
 
-![alt text](images/home/Architecture.png "Arquitectura Zahorí")
+![alt text](images/home/Architecture.jpg "Arquitectura Zahorí")
 
 ### Los procesos automatizados
 Son proyectos desarrollados con Java donde vamos a implementar los procesos o pruebas repetitivas que queremos automatizar.
