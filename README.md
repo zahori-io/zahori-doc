@@ -32,7 +32,8 @@ El servidor se compone de:
 - Un **frontal web** desarrollado en Angular donde podemos definir nuestros casos y datos de prueba, ejecutarlos, y ver los resultados y evidencias de esas ejecuciones.
 - Una **base de datos** PostgreSQL donde se guarda toda la información.
 - **Aerokube/Selenoid**: herramienta para ejecutar los procesos en múltiples navegadores en paralelo.
-- **Eureka**: servidor donde se registran los procesos y el servidor al iniciarse para que se puedan comunicar entre ellos independientemente del número de instancias de cada uno, sus IPs y puertos.
+- **Scheduler**: programador de ejecuciones.
+- **Consul**: servidor donde se registran los procesos y el servidor al iniciarse para que se puedan comunicar entre ellos independientemente del número de instancias de cada uno, sus IPs y puertos.
 - [API Rest](https://github.com/zahori-io/zahori-doc/blob/main/api/api.adoc): es el eje central encargado de coordinar las acciones entre el servidor, los procesos automatizados y el resto de los componentes.
 ## Quiero probar Zahorí, ¿por donde empiezo?
 
